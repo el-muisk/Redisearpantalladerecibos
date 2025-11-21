@@ -3,11 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
-  // PROPIEDAD CLAVE PARA GITHUB PAGES:
-  // Define la base de la URL para los assets (CSS/JS) en el entorno de producción.
-  // Ahora usamos la sintaxis de punto para asegurar la ruta relativa.
-  base: './', // <--- CAMBIO CLAVE AQUÍ: Usamos './'
-  
+
   plugins: [react()],
   
   resolve: {
