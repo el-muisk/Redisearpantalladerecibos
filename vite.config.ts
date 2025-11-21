@@ -3,7 +3,13 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
+  // PROPIEDAD CLAVE PARA GITHUB PAGES:
+  // Define la base de la URL para los assets (CSS/JS) en el entorno de producción.
+  // Debe coincidir con el nombre de tu repositorio, incluyendo mayúsculas/minúsculas.
+  base: '/RediseñarPantallaDerecibos/',
+  
   plugins: [react()],
+  
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
@@ -49,11 +55,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // Bloque 'build' unificado y correcto
+  
+  // CONFIGURACIÓN DE COMPILACIÓN:
   build: {
     target: 'esnext',
-    outDir: 'docs', // ¡Usamos 'docs' aquí para GitHub Pages!
+    outDir: 'docs', // Asegura la compilación a la carpeta 'docs'
   },
+  
   server: {
     port: 3000,
     open: true,
